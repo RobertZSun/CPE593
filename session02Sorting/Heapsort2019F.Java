@@ -30,7 +30,7 @@ public class Heapsort2019F {
 	}
 	
 	public static void makeheap(int[] x) {
-		for (int i = x.length/2; i > 0; i--) {
+		for (int i = x.length/2; i >= 0; i--) {
 			makesubheap(x, i);
 		}
 	}
@@ -39,6 +39,7 @@ public class Heapsort2019F {
 	}
 	public static void heapsort(int[] x) {
 		makeheap(x);
+		print(x);
 		for (int i = x.length-1; i > 0; i--) {
 			int temp = x[0];
 			x[0] = x[i];
@@ -46,13 +47,19 @@ public class Heapsort2019F {
 			fixheap(x, i);
 		}	
 	}
+	public static void print(int [] x) {
+		for (int i = 0; i < x.length; i++) {
+			System.out.print(x[i]);
+			System.out.print(' ');
+		}
+		System.out.println();
+	}
 	
 	public static void main(String[] args) {
 		int [] x = { 1, 2, 3, 4, 5, 6, 7, 8};
+		print(x);
 		heapsort(x);
-		for (int i = 0; i < x.length; i++)
-			System.out.print(x[i] + " ");
-		System.out.println();
+		print(x);
 	}
 
 }
